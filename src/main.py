@@ -191,6 +191,13 @@ def word_memory():
                 return
             elif user_input == word_key:
                 print("下一个是:")
+                word.pop(word_key)
+                if not word:
+                    print("全部单词助记完毕！")
+                    print("5秒后退出助记功能！")
+                    import time
+                    time.sleep(5)
+                    return
                 break
             elif user_input != word_key:
                 print("输入错误！,在输一遍吧")
